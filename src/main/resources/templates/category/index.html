@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách danh mục</title>
+  <style>
+    .table-custom { border-collapse: collapse; width:100%; }
+    .table-custom th, .table-custom td {
+      border: 1px solid #ccc;
+      padding: 8px;            /* thay cho cellpadding */
+      text-align: left;
+    }
+    .table-custom thead { background:#f8f9fa; }
+  </style>
+</head>
+<body>
+  <h2>📂 Danh sách Danh mục</h2>
+
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên danh mục</th>
+        <th>Mô tả</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="cat : ${categories}">
+        <td th:text="${cat.id}"></td>
+        <td th:text="${cat.name}"></td>
+        <td th:text="${cat.description}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a th:href="@{/baitap8}">⬅ Quay lại Trang chủ</a>
+</body>
+</html>
